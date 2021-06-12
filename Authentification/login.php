@@ -26,7 +26,7 @@
         <nav>
             <ul>
                 <li> ELYOUSFI Mohamed - BOUTIQUE  </li>
-                <li> <a href="https://github.com/ElyousfiMohamed/Blog-Express/tree/master" target="_blank"><i class="fab fa-github fa-lg"></i></a> </li>
+                <li> <a href="https://github.com/ElyousfiMohamed/BOUTIQUE" target="_blank"><i class="fab fa-github fa-lg"></i></a> </li>
                 <li> <a href="https://youtube.com/myvideohere" target="_blank"><i class="fab fa-youtube fa-lg"></i></i></a> </li>
             </ul>
         </nav>

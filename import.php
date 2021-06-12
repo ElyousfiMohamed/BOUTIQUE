@@ -16,7 +16,7 @@ if (!mysqli_select_db($connect, "boutique")) {
         $description = $products->description;
         $price = $products->price;
         $image = $products->image;
-
+        
         $sql = "INSERT INTO produits VALUES ('$ref','$name','$description','$price','$image')";
         $result = mysqli_query($connect, $sql);
     }

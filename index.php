@@ -3,6 +3,28 @@
     if (!isset($_SESSION['username'])) {
         echo "<script> window.location.replace(\"Authentification/login.php\"); </script>";
     }
+
+    if(isset($_REQUEST['add'])) {
+        if(isset($_SESSION['cart'])) {
+            $item_array_id = array_column($_SESSION['cart'],"product_id");
+            if(in_array($_REQUEST['product_id'],$item_array_id)) {
+                echo "<script>alert('produit déja dans le panier')</script>";
+                echo "<script>window.location='index.php'</script>";
+            }else {
+                $count = count($_SESSION['cart']);
+                $item_array = array (
+                    'product_id'=>$_REQUEST['product_id']
+                );
+                $_SESSION['cart'][$count] = $item_array;
+            }
+        }else {
+            $item_array = array (
+                'product_id'=>$_REQUEST['product_id']
+            );
+            $_SESSION['cart'][0] = $item_array;
+        }
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,18 +47,10 @@
   <title>Accueil</title>
 </head>
 <body>
-        <nav>
-            <ul>
-                <li> <?php
-                        if (isset($_SESSION['username'])) {
-                            echo $_SESSION['username'];
-                        }
-                        ?> <a href="Authentification/signout.php" class="logout"> <i class="fas fa-sign-out-alt" ></i> </a></li>
-                <li> <a href="https://github.com/ElyousfiMohamed/Blog-Express/tree/master" target="_blank"><i class="fab fa-github fa-lg"></i></a> </li>
-                <li> <a href="https://youtube.com/myvideohere" target="_blank"><i class="fab fa-youtube fa-lg"></i></i></a> </li>
-            </ul>
-        </nav>
-        <center><h3 style="color:white;margin-top:120px;padding:15px;border-radius:10px;background:black;width :400px;">Liste des produits</h3></center>
+        <?php
+            require_once('header.php')
+        ?>
+        <!--<center><h3 style="color:white;margin-top:50px;padding:15px;border-radius:10px;background:#343a40;width :400px;">Liste des produits</h3></center>-->
         <div class="container2">
        <div class="row text-center py-5">
         <?php 
@@ -61,6 +75,7 @@
                                     <span class=\"price\">".$ligne[3]."$</span>
                                 </h5>
                                 <button type=\"submit\" name=\"add\" class=\"btn btn-warning my-3\">Ajouter au panier<i class=\"fas fa-shopping-cart\"></i></button>
+                                <input type=\"hidden\" name=\"product_id\" value=\"$ligne[0]\">
                             </div>
                         </form>
                     </div>";} ?>
