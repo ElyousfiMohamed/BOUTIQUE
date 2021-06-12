@@ -1,0 +1,61 @@
+nav {
+    background: black;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
+}
+
+a i {
+    padding-top: 10px;
+    color: white;
+}
+
+a i.fa-github:hover {
+    color: rgba(255, 255, 255, 0.705);
+}
+
+a i.fa-youtube:hover {
+    color: rgba(255, 2, 2, 0.705);
+}
+
+li {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 40px;
+}
+
+.container, .panel-heading {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.container {
+    margin-top: 30vh;
+}
+
+.logout:hover i.fas{
+    color: rgba(255, 2, 2, 0.705);
+}
+
+.container2 img {
+    width: 300px;
+    height: 450px;
+}
+
+.container2 {
+    margin-top: 30px;
+}
