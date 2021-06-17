@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 12 juin 2021 à 23:49
+-- Généré le : jeu. 17 juin 2021 à 22:16
 -- Version du serveur :  10.4.19-MariaDB
 -- Version de PHP : 8.0.6
 
@@ -2976,8 +2976,8 @@ CREATE TABLE `utilisateur` (
 
 INSERT INTO `utilisateur` (`ID`, `USERNAME`, `EMAIL`, `PASSWD`) VALUES
 (4, 'mohamed ELYOUSFI', 'm.elyousfi_etu@enset-media.ac.ma', 'ENSETMEDIA'),
-(5, 'ELYOUSFI mohamed', 'mohamed5elyousfi@gmail.com', 'EL'),
-(6, 'Fatima elyousfi', 'felyousfi154@gmail.com', 'F123');
+(5, 'ELYOUSFI mohamed', 'mohamed5elyousfi@gmail.com', 'ENSETMEDIA20'),
+(6, 'Fatima elyousfi', 'felyousfi154@gmail.com', 'F1232004');
 
 --
 -- Index pour les tables déchargées
