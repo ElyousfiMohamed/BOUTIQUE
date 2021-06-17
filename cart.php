@@ -1,3 +1,16 @@
+<?php 
+    session_start();
+    if(isset($_REQUEST['delete'])) {
+        foreach ($_SESSION['cart'] as $id=>$value) {
+            if($value['product_id'] == $_REQUEST['idP']) {
+                unset($_SESSION['cart'][$id]);
+                echo "<script>alert('produit supprimé')</script>";
+                echo "<script>window.location = 'cart.php'</script>";
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +32,6 @@
 
 <body>
     <?php
-    session_start();
     require_once('header.php')
     ?>
     <div class="container2"  style="padding-left:50px;">
@@ -39,7 +51,7 @@
                 foreach ($product_id as $id) {
                     if ($ligne[0] == $id) {
                         echo "<div class=\"col-md-3 col-sm-3 my-1 my-md-0\">
-                            <form action=\"index.php\" methode=\"post\">
+                            <form action=\"cart.php\" methode=\"post\">
                                 <div>
                                     <img src=" . $ligne[4] . " alt=\"image\" class=\"img-fluid card-img-top\">
                                 </div>
@@ -49,6 +61,8 @@
                                     <h5>
                                         <small><s class=\"text-secondary\">" . ($ligne[3] - 1) . "$</s></small>
                                         <span class=\"price\">" . $ligne[3] . "$</span>
+                                        <input type=\"hidden\" name =\"idP\" value=\"".$ligne[0]."\">
+                                        <button type=\"submit\" name=\"delete\" class=\"btn btn-danger my-3\">Supprimer</button>
                                     </h5>
                                 </div>
                             </form>
