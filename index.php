@@ -50,7 +50,6 @@
         <?php
             require_once('header.php')
         ?>
-        <!--<center><h3 style="color:white;margin-top:50px;padding:15px;border-radius:10px;background:#343a40;width :400px;">Liste des produits</h3></center>-->
         <div class="container2">
        <div class="row text-center py-5">
         <?php 
